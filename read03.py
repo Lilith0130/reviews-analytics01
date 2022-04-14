@@ -7,8 +7,10 @@ with open('reviews.txt', 'r') as f:
 		if count % 1000 == 0:
 			print(len (data))
 
-print(len(data))#有沒有沒差
+print('檔案讀取完, 總共有', len(data), '資料')
 
-print(data[0])#印出0.1筆留言以及分隔線
-print('-------')
-print(data[1])
+sum_len = 0
+for d in data:
+	sum_len += len(d)
+
+print('每筆留言平均長度為', sum_len/len(data))
